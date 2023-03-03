@@ -24,7 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.609" />
+            app:layout_constraintVertical_bias="0.756" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
@@ -38,7 +38,7 @@
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.322" />
+            app:layout_constraintVertical_bias="0.417" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -63,10 +63,10 @@
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintVertical_bias="0.642" />
 
         <TextView
             android:id="@+id/textView"
@@ -80,33 +80,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button"
             app:layout_constraintVertical_bias="0.762" />
-
-        <EditText
-            android:id="@+id/editTextTextEmailAddress3"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginTop="24dp"
-            android:ems="10"
-            android:hint="Email Reset"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.035" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reset"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3"
-            app:layout_constraintVertical_bias="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

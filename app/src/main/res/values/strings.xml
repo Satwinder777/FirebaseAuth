@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">firebase</string>
+    <string name="client_id">871026308281-5va1ebb1om26scp64ffbr6he3fppvj4d.apps.googleusercontent.com</string>
+
+    <string name="facebook_app_id">1129883237694236</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">3b18d044518ff3e573049ed12bca6048</string>
+
+
+    <string name="demo">Satwinder:firebase pbs5$ keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+Alias name: androiddebugkey
+Creation date: 01-Oct-2018
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: C=US, O=Android, CN=Android Debug
+Issuer: C=US, O=Android, CN=Android Debug
+Serial number: 1
+Valid from: Mon Oct 01 11:47:45 IST 2018 until: Wed Sep 23 11:47:45 IST 2048
+Certificate fingerprints:
+         SHA1: 12:32:94:8D:7A:22:2B:1C:7B:86:40:23:97:C1:0F:01:AC:52:50:9D
+         SHA256: 27:64:9C:F4:4B:33:46:47:5B:BD:8D:B8:19:DD:13:F1:18:9E:6F:C8:F4:9F:8B:FA:15:44:CE:40:15:07:FF:57
+Signature algorithm name: SHA1withRSA
+Subject Public Key Algorithm: 1024-bit RSA key
+Version: 1
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore /Users/pbs5/.android/debug.keystore -destkeystore /Users/pbs5/.android/debug.keystore -deststoretype pkcs12".
+</string>
+    <string name="facebook">Welcome To Facebook</string>
+    <string name="line1">Don\'t have an Account <font fgcolor="#f59f5a">Signup</font></string>
 </resources>

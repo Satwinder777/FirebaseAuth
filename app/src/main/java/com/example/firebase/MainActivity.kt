@@ -2,12 +2,16 @@ package com.example.firebase
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import android.widget.Toast
 import com.example.firebase.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding :ActivityMainBinding
@@ -22,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         binding.textView.setOnClickListener {
-            val intent =Intent(this,SignInActivity::class.java)
+            val intent =Intent(this,Google_Facebook_login::class.java)
             startActivity(intent)
         }
         binding.button.setOnClickListener {
@@ -56,22 +60,6 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-                binding.button4.setOnClickListener {
-                val resetEmail  = binding.editTextTextEmailAddress3.text.toString()
-                    if (resetEmail.isNullOrEmpty().not()){
-                        firebaseAuth.sendPasswordResetEmail(resetEmail).addOnCompleteListener {
-                            if (it.isSuccessful){
-                                Toast.makeText(this, "isSuccessfull", Toast.LENGTH_SHORT).show()
-                            }
-                            else{
-                                Toast.makeText(this, "UnSuccessfull", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                    }
-                    else{
-                        Log.e("check123", "null or empty", )
-                    }
-                }
                 Log.e("check123", "null or empty", )
 
             }
@@ -82,7 +70,42 @@ class MainActivity : AppCompatActivity() {
             }
 
 
+
         }
+//        binding.button4.setOnClickListener {
+//            try {
+//                val info = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
+//                for (signature in info.signatures) {
+//                    val md = MessageDigest.getInstance("SHA")
+//                    md.update(signature.toByteArray())
+//                    val hashKey = String(Base64.encode(md.digest(), 0))
+//                    Log.d("KeyHash", hashKey)
+//                }
+//            } catch (e: PackageManager.NameNotFoundException) {
+//                Log.e("KeyHash", "Package name not found", e)
+//            } catch (e: NoSuchAlgorithmException) {
+//                Log.e("KeyHash", "No such algorithm", e)
+//            } catch (e: Exception) {
+//                Log.e("KeyHash", "Exception", e)
+//            }
+//            var intent = Intent(this,Google_Facebook_login::class.java)
+//            startActivity(intent)
+////                val resetEmail  = binding.editTextTextEmailAddress3.text.toString()
+////                    if (resetEmail.isNullOrEmpty().not()){
+////                        firebaseAuth.sendPasswordResetEmail(resetEmail).addOnCompleteListener {
+////                            if (it.isSuccessful){
+////                                Toast.makeText(this, "isSuccessfull", Toast.LENGTH_SHORT).show()
+////                            }
+////                            else{
+////                                Toast.makeText(this, "UnSuccessfull", Toast.LENGTH_SHORT).show()
+////                            }
+////                        }
+////                    }
+////                    else{
+////                        Log.e("check123", "null or empty", )
+////                    }
+//        }
+
 
 
 

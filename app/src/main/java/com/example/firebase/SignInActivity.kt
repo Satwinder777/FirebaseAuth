@@ -4,9 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.firebase.databinding.ActivityMainBinding
 import com.example.firebase.databinding.ActivitySignInBinding
-import com.example.firebase.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class SignInActivity : AppCompatActivity() {
@@ -29,7 +27,7 @@ class SignInActivity : AppCompatActivity() {
                if (userName.isNullOrEmpty().not() && password.isNullOrEmpty().not()){
                    firebaseAuth.signInWithEmailAndPassword(userName,password).addOnCompleteListener {
                        if (it.isSuccessful){
-                           val intent = Intent(this,SignUpActivity::class.java)
+                           val intent = Intent(this@SignInActivity,FinalActivity::class.java)
                            startActivity(intent)
                        }
                        else{
