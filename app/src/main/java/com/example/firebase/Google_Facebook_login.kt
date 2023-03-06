@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.pbs.testnavgraph.MainActivity1
 
 
 class Google_Facebook_login : AppCompatActivity() {
@@ -64,7 +65,7 @@ class Google_Facebook_login : AppCompatActivity() {
         binding.textView7.setOnClickListener {
             auth = Firebase.auth
 
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         binding.normal.setOnClickListener {
@@ -82,6 +83,8 @@ class Google_Facebook_login : AppCompatActivity() {
 
         binding.facebookBtn.setPermissions("email", "public_profile")
         binding.facebookBtn.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+
+
             override fun onSuccess(result: LoginResult) {
                 firebaseAuth = FirebaseAuth.getInstance()
                 // Successful Facebook login
@@ -89,7 +92,7 @@ class Google_Facebook_login : AppCompatActivity() {
                 firebaseAuth.signInWithCredential(credential)
                     .addOnCompleteListener(this@Google_Facebook_login) { task ->
                         if (task.isSuccessful) {
-                            val intent = Intent(this@Google_Facebook_login,FinalActivity::class.java)
+                            val intent = Intent(this@Google_Facebook_login,MainActivity1::class.java)
                             startActivity(intent)
                             val user = firebaseAuth.currentUser
                             // Do something with the user object
@@ -182,7 +185,7 @@ class Google_Facebook_login : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    val intent = Intent(this,FinalActivity::class.java)
+                    val intent = Intent(this,MainActivity1::class.java)
                     startActivity(intent)
                     val user = auth.currentUser
                     // ...
