@@ -8,6 +8,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="color_Disable_text">#BDBDBD</color>
+    <color name="color_hint_text">#37DFDFDF</color>
+
+    <color name="shimmer_color">#C6C0C0</color>
 
     <color name="bottom_nav_background">#FEDBD0</color>
     <color name="bottom_nav_item">#8C706D</color>

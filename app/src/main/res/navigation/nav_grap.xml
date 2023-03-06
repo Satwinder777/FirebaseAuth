@@ -12,6 +12,11 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
+        android:id="@+id/expFragment"
+        android:name="com.example.firebase.ExplorerFragment"
+        android:label="fragment_explorer"
+        tools:layout="@layout/fragment_explorer" />
+    <fragment
         android:id="@+id/favFragment"
         android:name="com.pbs.testnavgraph.FavFragment"
         android:label="fragment_fav"
@@ -26,4 +31,5 @@
         android:name="com.pbs.testnavgraph.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+
 </navigation>

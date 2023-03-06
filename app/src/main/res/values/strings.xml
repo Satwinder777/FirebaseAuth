@@ -5,6 +5,7 @@
     <string name="facebook_app_id">1129883237694236</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">3b18d044518ff3e573049ed12bca6048</string>
+    <string name="google_maps_key">AIzaSyBBgOn1FtmzyjUnX0Xl6xMFqXYFmSEgdZg</string>
 
 
     <string name="demo">Satwinder:firebase pbs5$ keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android

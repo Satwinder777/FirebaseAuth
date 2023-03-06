@@ -8,6 +8,11 @@
         android:icon="@drawable/home_24"
         />
     <item
+        android:id="@+id/expFragment"
+        android:title="Favorite"
+        android:icon="@drawable/search_24"
+        />
+    <item
         android:id="@+id/favFragment"
         android:title="Favorite"
         android:icon="@drawable/fav_24"

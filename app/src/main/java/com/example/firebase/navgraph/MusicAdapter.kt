@@ -2,6 +2,7 @@ package com.pbs.testnavgraph
 
 import android.content.Context
 import android.media.MediaPlayer
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebase.R
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 //class MusicAdapter(private val musicArrayList: ArrayList<MusicData>,var context: Context):RecyclerView.Adapter<MusicAdapter.InnerClass>() {
@@ -37,6 +40,9 @@ class MusicAdapter(private val musicArrayList: ArrayList<MusicData>, var context
         holder.img.setBackgroundResource(currentItem.img)
 
 
+
+
+
 //        var mediaPlayer: MediaPlayer? = null
         var songs = arrayOf(R.raw.levels,
             R.raw.two,
@@ -55,6 +61,22 @@ class MusicAdapter(private val musicArrayList: ArrayList<MusicData>, var context
         var currentSong = 0
 
        var  mediaPlayer = MediaPlayer.create(context,songs[currentSong])
+       var seekBar = holder.seekBar
+
+        seekBar.setMax(mediaPlayer.getDuration());
+      mediaPlayer.setOnCompletionListener {
+          currentSong++
+          mediaPlayer.start()
+      }
+
+        val handler = Handler()
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                seekBar.progress = mediaPlayer.currentPosition // update the seek bar position to the current position in the song
+                handler.postDelayed(this, 1000) // schedule the handler to run again after 1 second
+            }
+        }, 0)
+
 
 
         holder.playBtn.setOnClickListener{
@@ -116,17 +138,21 @@ class MusicAdapter(private val musicArrayList: ArrayList<MusicData>, var context
             var seekfrom = 0
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 // Do something when the SeekBar's progress changes
-                if (seekBar != null) {
-                    seekBar.progress = mediaPlayer.duration
+                if (fromUser) {
+                    mediaPlayer.seekTo(progress)
+
+                // seek to the new position in the song
                 }
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
+                mediaPlayer.pause()
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
                 Toast.makeText(context, "onStopTrackingTouch", Toast.LENGTH_SHORT).show()
+                mediaPlayer.seekTo(seekBar?.progress ?: 0)
+                mediaPlayer.start()
             }
         })
 
