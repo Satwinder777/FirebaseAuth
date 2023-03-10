@@ -5,7 +5,7 @@
     <string name="facebook_app_id">1129883237694236</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">3b18d044518ff3e573049ed12bca6048</string>
-    <string name="google_maps_key">AIzaSyBBgOn1FtmzyjUnX0Xl6xMFqXYFmSEgdZg</string>
+    <string name="google_maps_key">AIzaSyAsSMYb29gSo5bq2Ip-3lwx5mhqToxd5W8</string>
 
 
     <string name="demo">Satwinder:firebase pbs5$ keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
@@ -30,4 +30,19 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 </string>
     <string name="facebook">Welcome To Facebook</string>
     <string name="line1">Don\'t have an Account <font fgcolor="#f59f5a">Signup</font></string>
+    <string-array name="technology_list">
+        <item>C</item>
+        <item>C++</item>
+        <item>Java</item>
+        <item>.Net</item>
+        <item>Kotlin</item>
+        <item>Ruby</item>
+        <item>Rails</item>
+        <item>Python</item>
+        <item>Java Script</item>
+        <item>Php</item>
+        <item>Ajax</item>
+        <item>Perl</item>
+        <item>Hadoop</item>
+    </string-array>
 </resources>

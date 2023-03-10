@@ -1,4 +1,4 @@
-package com.pbs.testnavgraph
+package com.example.firebase
 
 interface NewInterface {
     fun onClick(position: Int, value: String?)

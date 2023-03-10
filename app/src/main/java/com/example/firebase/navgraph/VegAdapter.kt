@@ -16,6 +16,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebase.R
+import com.example.firebase.VegData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -103,9 +104,7 @@ class VegAdapter(private val fruitArrayList: ArrayList<VegData>) :
 
 
     }
-    private fun getRecyclerData(){
 
-    }
 
 
 

@@ -22,21 +22,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Firebase"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity.MusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AlbumDetailActivity"
+            android:exported="false" />
 
-        <!--
-             TODO: Before you run your application, you need a Google Maps API key.
-
-             To get one, follow the directions here:
-
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-             Once you have your API key (it starts with "AIza"), define a new property in your
-             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBBgOn1FtmzyjUnX0Xl6xMFqXYFmSEgdZg" />
+            android:value="AIzaSyAsSMYb29gSo5bq2Ip-3lwx5mhqToxd5W8" />
 
         <activity
             android:name=".FacebookActivity"
@@ -70,10 +65,30 @@
         <!-- android:exported="false" /> -->
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
-            android:name="com.pbs.testnavgraph.MainActivity1"
-            android:exported="false"/>
+            android:name=".MainActivity1"
+            android:exported="false" />
+        <activity
+            android:name="com.example.firebase.HomeFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.firebase.ExplorerFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.firebase.FavFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.firebase.MusicFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="com.example.firebase.UserFragment"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -81,9 +96,6 @@
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token" />
-
-
-
     </application>
 
 </manifest>

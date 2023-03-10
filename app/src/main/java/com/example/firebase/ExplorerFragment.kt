@@ -3,39 +3,37 @@ package com.example.firebase
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import com.google.android.gms.location.places.Place
 import com.google.android.gms.location.places.Places
+import com.google.android.gms.maps.*
 
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.net.PlacesClient
 import java.util.*
 
-class ExplorerFragment : Fragment() {
-    private lateinit var place: Place
+class ExplorerFragment : Fragment(),GoogleMap.OnMapLongClickListener{
     private lateinit var placesClient: PlacesClient
+    private lateinit var gm :GoogleMap
+
 
 
     private val callback = OnMapReadyCallback { googleMap ->
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
+        gm = googleMap
+       gm.mapType = GoogleMap.MAP_TYPE_NORMAL
+        gm.uiSettings.isZoomControlsEnabled = true
         val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        gm.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        gm.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+        // Customize the map
+
+
     }
 
     override fun onCreateView(
@@ -44,7 +42,6 @@ class ExplorerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_explorer, container, false)
-//        initView()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,15 +49,25 @@ class ExplorerFragment : Fragment() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
 
+        initView()
+
     }
-//    private fun initView() {
-//
-//
-//        if (!Places.isInitialized()) {
-//            Places.initialize(
-//                requireActivity(), getString(R.string.google_maps_key), Locale.US
-//            )
-//        }
-//        placesClient = Places.createClient(requireActivity())
-//    }
+    private fun initView() {
+
+
+        if (!com.google.android.libraries.places.api.Places.isInitialized()) {
+            com.google.android.libraries.places.api.Places.initialize(
+                requireActivity(), R.string.google_maps_key.toString(), Locale.US
+            )
+        }
+        placesClient = com.google.android.libraries.places.api.Places.createClient(requireActivity())
+    }
+
+    override fun onMapLongClick(p0: LatLng) {
+
+            gm.addMarker(MarkerOptions().position(p0).draggable(true))
+
+    }
+
+
 }

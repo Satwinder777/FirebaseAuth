@@ -1,4 +1,4 @@
-package com.pbs.testnavgraph
+package com.example.firebase
 
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebase.R
+import com.pbs.testnavgraph.VegAdapter
 
 
 class FavFragment : Fragment() {

@@ -3,6 +3,7 @@ package com.example.firebase
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firebase.databinding.ActivityGoogleLoginBinding
@@ -21,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.pbs.testnavgraph.MainActivity1
+//import com.pbs.testnavgraph.MainActivity1
 
 
 class Google_Facebook_login : AppCompatActivity() {
@@ -57,7 +58,7 @@ class Google_Facebook_login : AppCompatActivity() {
         binding.googleBtn.setOnClickListener {
             auth = Firebase.auth
 
-            googleSignInClient.signOut()
+//            googleSignInClient.signOut()
             startActivityForResult(googleSignInClient.signInIntent  ,13)
 
 
@@ -98,8 +99,9 @@ class Google_Facebook_login : AppCompatActivity() {
                             // Do something with the user object
                         } else {
                             // Firebase authentication failed
-                            Toast.makeText(this@Google_Facebook_login, "Authentication failed.",
+                            Toast.makeText(this@Google_Facebook_login, "Authentication failed.   ",
                                 Toast.LENGTH_SHORT).show()
+                            Log.e("tag1234", "onSuccess: ${task.exception?.message}", )
                         }
                     }
             }
