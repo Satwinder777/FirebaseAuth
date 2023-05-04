@@ -54,11 +54,7 @@ import kotlinx.coroutines.withContext
         holder.itemView.setOnClickListener {
             val intent = Intent(context, AlbumDetailActivity::class.java)
                    context.startActivity(intent)
-                    }
-
-
-
-
+        }
     }
 
 

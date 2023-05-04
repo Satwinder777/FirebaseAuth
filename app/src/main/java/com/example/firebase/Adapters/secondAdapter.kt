@@ -1,24 +1,18 @@
 package com.example.firebase.Adapters
 
-import android.util.Log
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.firebase.Activity.AlbumDetailActivity
 import com.example.firebase.R
-import com.example.firebase.VegData
 import com.example.firebase.songData
-import com.pbs.testnavgraph.VegAdapter
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
- class secondAdapter (private val songArrayList: ArrayList<songData>) :
+class secondAdapter(private val songArrayList: ArrayList<songData>, var context: Context) :
     RecyclerView.Adapter<secondAdapter.InnerClass1>() {
 
 
@@ -46,12 +40,9 @@ import kotlinx.coroutines.withContext
         holder.artistNAme.text = currentItem.artistName.toString()
         holder.songCoverImg.setImageResource(currentItem.img)
         holder.itemView.setOnClickListener {
-
+            val intent = Intent(context, AlbumDetailActivity::class.java)
+            context.startActivity(intent)
         }
-
-
-
-
     }
 
 

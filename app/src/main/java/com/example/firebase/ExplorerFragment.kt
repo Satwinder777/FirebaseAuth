@@ -24,9 +24,11 @@ class ExplorerFragment : Fragment(),GoogleMap.OnMapLongClickListener{
 
 
     private val callback = OnMapReadyCallback { googleMap ->
+
         gm = googleMap
        gm.mapType = GoogleMap.MAP_TYPE_NORMAL
         gm.uiSettings.isZoomControlsEnabled = true
+
         val sydney = LatLng(-34.0, 151.0)
         gm.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         gm.moveCamera(CameraUpdateFactory.newLatLng(sydney))

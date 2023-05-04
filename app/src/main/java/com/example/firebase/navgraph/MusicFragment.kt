@@ -98,35 +98,43 @@ class MusicFragment : Fragment() {
         )
 
         val song = arrayOf(
-            R.raw.levels,
-            R.raw.two,
-            R.raw.fuck_em_all,
-            R.raw.levels,
-            R.raw.two,
-            R.raw.fuck_em_all,
-            R.raw.levels,
-            R.raw.two,
-            R.raw.fuck_em_all,
-            R.raw.levels,
-            R.raw.two,
-            R.raw.fuck_em_all,
+           "Level",
+            "Fuck em All",
+            "Legend",
+            "Devil",
+            "So High",
+            "Level",
+            "Fuck em All",
+            "Legend",
+            "Devil",
+            "So High",
+            "Level",
+            "Fuck em All",
+            "Legend",
+            "Devil",
+            "So High",
+            "Level",
+            "Fuck em All",
+            "Legend",
+            "Devil",
+            "So High",
 
 
 
         )
 
         val artistName = arrayOf(
-            "Sidhu Moose Wala",
+            "Sidhu Moose",
             "Satwinder",
             "Naresh",
-            "Sidhu Moose Wala",
+            "Sidhu Moose",
             "Param",
-            "Sidhu Moose Wala",
+            "Sidhu Moose",
             "Satwinder",
-            "Sidhu Moose Wala",
+            "Sidhu Moose",
             "Naresh",
-            "Sidhu Moose Wala",
-            "Sidhu Moose Wala",
+            "Sidhu Moose",
+            "Sidhu Moose",
             "Naresh",
 
         )

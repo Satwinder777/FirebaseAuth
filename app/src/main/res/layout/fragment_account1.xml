@@ -87,6 +87,15 @@
                          />
                 </androidx.cardview.widget.CardView>
 
+                <TextView
+                    android:id="@+id/logoutId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+                    android:textColor="@color/com_facebook_blue"
+                    android:text="LogOut" />
+
 
             </androidx.cardview.widget.CardView>
 

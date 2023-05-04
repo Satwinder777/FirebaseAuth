@@ -38,7 +38,7 @@ class FavFragment : Fragment() {
         val LayoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.recyclerView2)
         recyclerView.layoutManager = LayoutManager
-        recyclerView.setHasFixedSize(true)
+        adapter = VegAdapter(vegArrayList)
         adapter = VegAdapter(vegArrayList)
         recyclerView.adapter = adapter
 

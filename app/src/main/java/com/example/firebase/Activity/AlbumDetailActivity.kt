@@ -1,15 +1,12 @@
 package com.example.firebase.Activity
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.widget.Adapter
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,12 +20,18 @@ class AlbumDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumDetailBinding
     private lateinit var recyclerView: RecyclerView
     private  var songArrayList: ArrayList<songData> ?= arrayListOf()
+    var currentsong =1
       var song= arrayOf<Int>()
-    var mMediaPlayer: MediaPlayer? = null
+     var mMediaPlayer= MediaPlayer()
      var btn :ImageView?=null
     var progressStatus:Int=0
+    var mediaText : Int? = null
+    var mediaText1 : Int? = null
     private lateinit var handler: Handler
-//    lateinit var adapter1: Adapter
+//    var btnplay :ImageView = findViewById(R.id.newIdplayBtn)
+//    lateinit var adapter1: Adapter6
+    var musicActivity = MusicActivity()
+    var songsArray = musicActivity.songs
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAlbumDetailBinding.inflate(layoutInflater)
@@ -50,6 +53,7 @@ class AlbumDetailActivity : AppCompatActivity() {
         binding.albumRecycler.adapter = adapter
 
         var a=false
+
         binding.newIdlove.setOnClickListener {
 
             if (a==false){
@@ -68,7 +72,30 @@ class AlbumDetailActivity : AppCompatActivity() {
             }
 
         }
-        binding.playAllId.setOnClickListener { adapter.playAll() }
+        binding.playAllId.setOnClickListener {
+            mediaText = 0
+            if (adapter.mediaPlayer?.isPlaying == false){
+
+                binding.playAllId.setImageResource(R.drawable.pause0)
+                playall()
+                mMediaPlayer?.setOnCompletionListener { currentsong++
+
+                    playall()
+                }
+
+            }
+
+            else{
+              adapter.mediaPlayer?.pause()
+                playall()
+                mMediaPlayer?.setOnCompletionListener { currentsong++
+
+                    playall()
+                }
+            }
+
+
+        }
         binding.musicItem.setOnClickListener {
             val intent = Intent(this,MusicActivity::class.java)
             startActivity(intent)
@@ -76,11 +103,76 @@ class AlbumDetailActivity : AppCompatActivity() {
 //        mMediaPlayer = MediaPlayer.create(this,R.raw.levels)
 
 
+        Log.e("newtag", "$mediaText1", )
 
         //play and pause song
-
+var text =  mediaText
         binding.newIdplayBtn.setOnClickListener {
-            adapter.playnpause()
+
+            if(text==0){
+
+                    if (!mMediaPlayer.isPlaying){
+
+                        mMediaPlayer.start()
+                        binding.newIdplayBtn.setImageResource(R.drawable.pause0)
+                        Toast.makeText(this, "0 if", Toast.LENGTH_SHORT).show()
+
+                    }
+                    else{
+
+                        mMediaPlayer.pause()
+                        binding.playAllId.setImageResource(R.drawable.play0)
+                        Toast.makeText(this, " 0 else", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                if (text ==1) {
+                    if (adapter.mediaPlayer.isPlaying.not()){
+                        adapter.mediaPlayer.start()
+                        binding.newIdplayBtn.setImageResource(R.drawable.pause0)
+                        Toast.makeText(this, "1 if ", Toast.LENGTH_SHORT).show()
+
+                    }
+                    else{
+                        adapter.mediaPlayer.pause()
+                        binding.newIdplayBtn.setImageResource(R.drawable.play0)
+                        Toast.makeText(this, " 1 else", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                }
+
+
+
+                if(mediaText1==null ) {
+                    binding.newIdplayBtn.setImageResource(R.drawable.play0)
+                    if (mediaText1 == null){
+                        if (mMediaPlayer.isPlaying.not()){
+                            MediaPlayer.create(this,R.raw.two)
+                            mMediaPlayer.start()
+                            binding.newIdplayBtn.setImageResource(R.drawable.pause0)
+                        }
+                        else{
+                            mMediaPlayer.pause()
+                            binding.newIdplayBtn.setImageResource(R.drawable.play0)
+
+                        }
+
+                    Toast.makeText(this, "else block executes", Toast.LENGTH_SHORT).show()
+
+                }
+
+
+
+
+            }
+
+            }
+            println("the id is the ${text}")
+
+            if (adapter.mediaPlayer.isPlaying.not()){
+
+            }
 
         }
         var btn:ImageView = binding.newIdplayBtn
@@ -118,7 +210,7 @@ class AlbumDetailActivity : AppCompatActivity() {
                 }
                 binding.progressBarHorizontal.max=end
                 binding.progressBarHorizontal.progress = progressStatus
-                            Log.e("progCheck", "onCreate:${progressStatus}" )
+//                            Log.e("progCheck", "onCreate:${progressStatus}" )
 
                 handler?.sendEmptyMessageDelayed(0, 100)
 
@@ -293,6 +385,11 @@ class AlbumDetailActivity : AppCompatActivity() {
         }
 
 
+//        songsArray[currentsong]
+
+
+
+
 
 
 }
@@ -324,6 +421,24 @@ class AlbumDetailActivity : AppCompatActivity() {
 //        Log.e("click", "onCreate: clicked", )
 //    }
 
+    fun playall(){
+        if (mMediaPlayer.isPlaying.not()){
+            mMediaPlayer = MediaPlayer.create(this, songsArray[currentsong])
+            mMediaPlayer.start()
+            binding.playAllId.setImageResource(R.drawable.pause0)
+
+        }
+        else{
+            mMediaPlayer.pause()
+            binding.playAllId.setImageResource(R.drawable.play0)
+
+        }
+
+    }
+    fun setText12(a:Int){
+        mediaText1 = a
+
+    }
 
 
 }

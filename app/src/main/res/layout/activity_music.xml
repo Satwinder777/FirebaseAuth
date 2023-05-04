@@ -10,21 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E69BB1B3"
+        android:background="@drawable/gradient_bg"
         tools:context=".Activity.MusicActivity">
 
-        <ImageView
-            android:id="@+id/MusicMain_Img"
-            android:layout_width="367dp"
-            android:layout_height="367dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.091"
-            android:scaleType="fitXY"
-            android:src="@drawable/level" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,7 +64,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_weight="1"
 
-                    android:text="0:01" />
+                    android:text="0:00" />
 
                 <TextView
                     android:id="@+id/FinalTime"
@@ -131,5 +120,28 @@
 
             </LinearLayout>
         </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="18dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.091"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/MusicMain_Img"
+                android:layout_width="367dp"
+                android:layout_height="330dp"
+
+                android:scaleType="fitXY"
+                android:src="@drawable/level" />
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

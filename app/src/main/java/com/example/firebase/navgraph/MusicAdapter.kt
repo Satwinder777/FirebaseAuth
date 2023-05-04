@@ -34,7 +34,7 @@ class MusicAdapter(private val musicArrayList: ArrayList<MusicData>, var context
 
 
         val currentItem = musicArrayList[position]
-        holder.songName.text = currentItem.musicName.toString()
+        holder.songName.text = currentItem.musicName
         holder.artistName.text = currentItem.artistName
         holder.img.setBackgroundResource(currentItem.img)
 

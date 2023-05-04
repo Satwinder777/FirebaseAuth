@@ -1,7 +1,7 @@
 package com.example.firebase
 
 data class MusicData(
-    var musicName: Int,
+    var musicName: String,
     var artistName:String,
     var img:Int) {
 

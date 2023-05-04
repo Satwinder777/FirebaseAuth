@@ -63,10 +63,10 @@ class Google_Facebook_login : AppCompatActivity() {
 
 
         }
-        binding.textView7.setOnClickListener {
+        binding.SignupId.setOnClickListener {
             auth = Firebase.auth
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this@Google_Facebook_login, MainActivity::class.java)
             startActivity(intent)
         }
         binding.normal.setOnClickListener {

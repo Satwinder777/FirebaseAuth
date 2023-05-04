@@ -1,8 +1,10 @@
 package com.example.firebase
 
 import android.annotation.SuppressLint
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -18,9 +20,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity1 : AppCompatActivity() {
     private lateinit var navController: NavController
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var recyclerView2: RecyclerView
-    private lateinit var recyclerView3: RecyclerView
+//    private lateinit var recyclerView: RecyclerView
+//    private lateinit var recyclerView2: RecyclerView
+//    private lateinit var recyclerView3: RecyclerView
     private lateinit var binding: FragmentHomeBinding
     private lateinit var songArrayList: ArrayList<songData>
 
@@ -38,21 +40,27 @@ class MainActivity1 : AppCompatActivity() {
 
         setupWithNavController(bottomNavigationView , navController)
 
-        recyclerView = findViewById(R.id.recycler_view1)
-        recyclerView2 = findViewById(R.id.recyclerView21)
-        recyclerView3 = findViewById(R.id.recyclerView31)
-
-        binding.recyclerView1.layoutManager=  LinearLayoutManager(this)
-        binding.recyclerView21.layoutManager=  LinearLayoutManager(this)
-        binding.recyclerView31.layoutManager=  LinearLayoutManager(this)
-        showVegData()
-        var adapter = FirstAdapter(songArrayList,this)
-        var adapter2 =secondAdapter(songArrayList)
-        var adapter3 =ThirdAdapter(songArrayList)
-        recyclerView.adapter= adapter
-        recyclerView2.adapter= adapter2
-        recyclerView3.adapter= adapter3
+//        recyclerView = findViewById(R.id.recycler_view1)
+//        recyclerView2 = findViewById(R.id.recyclerView21)
+//        recyclerView3 = findViewById(R.id.recyclerView31)
+//
+//        binding.recyclerView1.layoutManager=  LinearLayoutManager(this)
+//        binding.recyclerView21.layoutManager=  LinearLayoutManager(this)
+//        binding.recyclerView31.layoutManager=  LinearLayoutManager(this)
+//        showVegData()
+//        var adapter = FirstAdapter(songArrayList,this)
+//        var adapter2 =secondAdapter(songArrayList)
+//        var adapter3 =ThirdAdapter(songArrayList)
+//        recyclerView.adapter= adapter
+//        recyclerView2.adapter= adapter2
+//        recyclerView3.adapter= adapter3
     }
+
+
+
+
+
+
 
 
     private fun showVegData() {
